@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "327293320034",
+    "project_id": "teamtaskmanager-304c8",
+    "storage_bucket": "teamtaskmanager-304c8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327293320034:android:be6cd1d4f5b38b858d0a3b",
+        "android_client_info": {
+          "package_name": "com.example.teamtaskmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB8Nh1fPTM0xgYNvhs6rOqE0174NOnKWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
