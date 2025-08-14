@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="@color/colorSurface">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="24dp"
         android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Create account"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/colorOnSurface"
+            android:layout_marginBottom="24dp"/>
 
         <EditText
             android:id="@+id/emailEditText"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@drawable/edittext_enhanced"
+            android:textColor="@color/colorOnSurface"
+            android:textColorHint="@color/colorOnSurfaceVariant"
+            android:textSize="16sp"
+            android:drawableStart="@android:drawable/ic_dialog_email"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -32,7 +43,15 @@
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@drawable/edittext_enhanced"
+            android:textColor="@color/colorOnSurface"
+            android:textColorHint="@color/colorOnSurfaceVariant"
+            android:textSize="16sp"
+            android:drawableStart="@android:drawable/ic_lock_lock"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/colorPrimary" />
 
         <RadioGroup
             android:id="@+id/roleRadioGroup"
@@ -58,13 +77,19 @@
         <Button
             android:id="@+id/registerButton"
             android:text="Register"
-            android:layout_marginTop="32dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_login_rounded"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="16dp" />
+
         <TextView
             android:id="@+id/loginTextView"
             android:text="Already have an account? Login"
-            android:textColor="#2196F3"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"

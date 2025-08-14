@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class EmployeeDashboardActivity extends AppCompatActivity {
 
     private TextView tvPendingCount, tvCompletedCount, tvLatestTitle, tvLatestDescription;
-    private Button btnViewAll;
+    private Button btnViewAll, btnLogout;
     private DatabaseReference tasksRef;
     private String currentUserId;
 
@@ -30,11 +30,12 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_dashboard);
 
-        // --- Toolbar (make sure your layout has a Toolbar with id "toolbar") ---
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        // --- Toolbar ---
+        Toolbar toolbar = findViewById(R.id.customToolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Employee Dashboard");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
         // --- Views (IDs must match those in activity_employee_dashboard.xml) ---
@@ -43,6 +44,7 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
         tvLatestTitle = findViewById(R.id.tvLatestTitle);
         tvLatestDescription = findViewById(R.id.tvLatestDescription);
         btnViewAll = findViewById(R.id.btnViewAll);
+        btnLogout = findViewById(R.id.btnLogout);
 
         // --- Auth check ---
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -59,6 +61,13 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
         // --- View All button ---
         btnViewAll.setOnClickListener(v -> {
             startActivity(new Intent(EmployeeDashboardActivity.this, EmployeeViewTasksActivity.class));
+        });
+
+        // --- Logout button ---
+        btnLogout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(EmployeeDashboardActivity.this, LoginActivity.class));
+            finish();
         });
 
         // --- Load counts & latest task ---

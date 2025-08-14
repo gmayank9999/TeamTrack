@@ -44,6 +44,9 @@ public class ViewTasksActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        // Handle toolbar back button
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
 
         tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         progressBar = findViewById(R.id.progressBar);
